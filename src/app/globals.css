@@ -19,3 +19,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.container1 {
+  @apply px-5 md:px-32 lg:px-56 xl:px-60;
+}
+
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+}
+
+h2 {
+  @apply text-3xl md:text-[2rem] lg:text-4xl font-semibold;
+}
+h3 {
+  @apply text-2xl md:text-3xl lg:text-2xl font-semibold;
+}
