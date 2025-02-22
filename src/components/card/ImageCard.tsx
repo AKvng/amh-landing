@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Image from "next/image";
+
 export type ImageCardProps = {
   src: string;
   styTail?: string;
@@ -8,6 +9,12 @@ export type ImageCardProps = {
   aspect?: `aspect-[${number}] md:aspect-[${number}] lg:aspect-[${number}]`;
   rounded?: boolean;
 };
+
+/**
+ * Image Card component for displaying images.
+ * @param {ImageCardProps} props
+ * @returns {ReactNode} - basically an image but one that can be styled
+ */
 function ImageCard({
   src,
   alt,
@@ -26,8 +33,8 @@ function ImageCard({
         src={src}
         alt={alt}
         fill
-        // placeholder="blur"
-        // blurDataURL={""}
+        placeholder="blur"
+        blurDataURL={"/blue-background"}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
