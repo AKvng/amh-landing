@@ -22,7 +22,7 @@ jobs:
           node-version: "20.x"
 
       - name: Install prod dependencies
-        run: npm ci --only=production
+        run: npm ci
 
       - name: Build app to be ready for production
         run: npm run build
