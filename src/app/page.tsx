@@ -1,5 +1,5 @@
-import ImageCard from "@/components/card/ImageCard";
-import { IconDefinition, IconName } from "@fortawesome/fontawesome-svg-core";
+import ImageCard from "../components/card/ImageCard";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {} from "@fortawesome/free-solid-svg-icons/faDollarSign";
 import {
   faDollarSign,
@@ -11,18 +11,17 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Footer from "@/components/layout/footer";
+import Footer from "../components/layout/footer";
 
 function LandingPage() {
-  const landingNavigation = [
-    { name: "features", href: "#features" },
-    { name: "pricing", href: "#pricing" },
-    { name: "about us", href: "#about" },
-    { name: "dashboard", href: "#dashboard" },
-    { name: "contact", href: "#contact" },
-  ];
+  //   const landingNavigation = [
+  //     { name: "features", href: "#features" },
+  //     { name: "pricing", href: "#pricing" },
+  //     { name: "about us", href: "#about" },
+  //     { name: "dashboard", href: "#dashboard" },
+  //     { name: "contact", href: "#contact" },
+  //   ];
 
   const features: {
     name: string;
@@ -104,22 +103,22 @@ function LandingPage() {
       alt: "",
     },
   ];
-  const Nav = () => {
-    return (
-      <nav>
-        <ul>
-          {landingNavigation.map(({ name, href }) => (
-            <li key={name}>
-              <Link className="capitalize" href={href}>
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  };
-  const date = new Date();
+  //   const Nav = () => {
+  //     return (
+  //       <nav>
+  //         <ul>
+  //           {landingNavigation.map(({ name, href }) => (
+  //             <li key={name}>
+  //               <Link className="capitalize" href={href}>
+  //                 {name}
+  //               </Link>
+  //             </li>
+  //           ))}
+  //         </ul>
+  //       </nav>
+  //     );
+  //   };
+  //   const date = new Date();
 
   const Card = ({
     title,
@@ -214,7 +213,10 @@ function LandingPage() {
           <div className="flex gap-y-12 md:gap-y-16 sm:gap-4 md:gap-x-6 lg:gap-x-7 xl:gap-x-16 justify-around w-full flex-wrap">
             {features.map(
               ({ name, description, icon, color, backgroundColor }, index) => (
-                <div className="md:min-w-[8rem] lg:min-w-[8rem] md:max-w-[12.7rem] lg:max-w-[10.4rem] items-center flex flex-col gap-y-4">
+                <div
+                  className="md:min-w-[8rem] lg:min-w-[8rem] md:max-w-[12.7rem] lg:max-w-[10.4rem] items-center flex flex-col gap-y-4"
+                  key={name}
+                >
                   <div
                     className={`p-6 md:p-8 ${backgroundColor} ${
                       index < 3 ? "rounded-2xl md:rounded-3xl" : "rounded-full"
@@ -267,7 +269,10 @@ function LandingPage() {
         {/* card */}
         <div className="mt-8 md:mt-10 space-y-12 sm:space-y-0 md:flex md:flex-wrap md:justify-around gap-y-3 md:gap-y-5 md:gap-x-5 lg:gap-x-6 xl:gap-x-8">
           {services.map(({ name, description, src, alt }) => (
-            <div className="md:flex-1 md:min-w-[18rem] md:max-w-[20rem] bg-bright over shadow-md rounded-2xl md:rounded-3xl overflow-hidden">
+            <div
+              className="md:flex-1 md:min-w-[18rem] md:max-w-[20rem] bg-bright over shadow-md rounded-2xl md:rounded-3xl overflow-hidden"
+              key={name}
+            >
               <Card
                 title={name}
                 description={description}

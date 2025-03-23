@@ -1,4 +1,4 @@
-import { contact, landingNavigation } from "@/lib/nav";
+import { contact, landingNavigation } from "../../lib/nav";
 import Link from "next/link";
 
 function Footer() {
@@ -18,7 +18,9 @@ function Footer() {
           <h4 className="mb-4 md:mb-8">Menu</h4>
           <div className="flex flex-col gap-y-3 md:gap-y-4">
             {landingNavigation.map(({ name, href }) => (
-              <Link href={href}>{name}</Link>
+              <Link key={name} href={href}>
+                {name}
+              </Link>
             ))}
           </div>
         </div>
@@ -27,7 +29,7 @@ function Footer() {
           <h4 className="mb-4 md:mb-8">Reach Out</h4>
           <div className="flex flex-col gap-y-1 md:gap-y-2">
             {contact.map(({ name, content }) => (
-              <div className="flex gap-x-2 gap-y-4">
+              <div key={name} className="flex gap-x-2 gap-y-4">
                 <p>{name}</p>
                 <p>{content}</p>
               </div>
