@@ -1,4 +1,4 @@
-import ImageCard from "@/components/card/ImageCard";
+import ImageCard from "../components/card/ImageCard";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {} from "@fortawesome/free-solid-svg-icons/faDollarSign";
 import {
@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Footer from "@/components/layout/footer";
+import Footer from "../components/layout/footer";
 
 function LandingPage() {
   //   const landingNavigation = [
