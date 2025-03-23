@@ -1,0 +1,45 @@
+name: "Deploy app to S3"
+
+on:
+  push:
+    branches: ["main"]
+permissions:
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Install prod dependencies
+        run: npm ci --only=production
+
+      - name: Build app to be ready for production
+        run: npm run build
+
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AMH_LANDING_DEPLOY_ROLE}}
+          role-session-name: amh-landing-deployment-session
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy to S3
+        uses: reggionick/s3-deploy@v4
+        with:
+          folder: build
+          bucket: ${{ secrets.AMH_LANDING_S3_BUCKET }}
+          bucket-region: ${{ secrets.AMH_LANDING_S3_BUCKET_REGION }}
+          no-cache: true
+          private: true
+          files-to-include: "{.*/**,**}"

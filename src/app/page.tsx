@@ -214,7 +214,10 @@ function LandingPage() {
           <div className="flex gap-y-12 md:gap-y-16 sm:gap-4 md:gap-x-6 lg:gap-x-7 xl:gap-x-16 justify-around w-full flex-wrap">
             {features.map(
               ({ name, description, icon, color, backgroundColor }, index) => (
-                <div className="md:min-w-[8rem] lg:min-w-[8rem] md:max-w-[12.7rem] lg:max-w-[10.4rem] items-center flex flex-col gap-y-4">
+                <div
+                  className="md:min-w-[8rem] lg:min-w-[8rem] md:max-w-[12.7rem] lg:max-w-[10.4rem] items-center flex flex-col gap-y-4"
+                  key={name}
+                >
                   <div
                     className={`p-6 md:p-8 ${backgroundColor} ${
                       index < 3 ? "rounded-2xl md:rounded-3xl" : "rounded-full"
@@ -267,7 +270,10 @@ function LandingPage() {
         {/* card */}
         <div className="mt-8 md:mt-10 space-y-12 sm:space-y-0 md:flex md:flex-wrap md:justify-around gap-y-3 md:gap-y-5 md:gap-x-5 lg:gap-x-6 xl:gap-x-8">
           {services.map(({ name, description, src, alt }) => (
-            <div className="md:flex-1 md:min-w-[18rem] md:max-w-[20rem] bg-bright over shadow-md rounded-2xl md:rounded-3xl overflow-hidden">
+            <div
+              className="md:flex-1 md:min-w-[18rem] md:max-w-[20rem] bg-bright over shadow-md rounded-2xl md:rounded-3xl overflow-hidden"
+              key={name}
+            >
               <Card
                 title={name}
                 description={description}
