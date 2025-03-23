@@ -1,3 +1,4 @@
+// navigation content
 export const landingNavigation = [
   { name: "features", href: "#features" },
   { name: "pricing", href: "#pricing" },
