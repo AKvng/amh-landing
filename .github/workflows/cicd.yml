@@ -3,6 +3,8 @@ name: "Deploy app to S3"
 on:
   push:
     branches: ["main"]
+permissions:
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -11,9 +13,6 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -27,6 +26,13 @@ jobs:
 
       - name: Build app to be ready for production
         run: npm run build
+
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AMH_LANDING_DEPLOY_ROLE}}
+          role-session-name: amh-landing-deployment-session
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy to S3
         uses: reggionick/s3-deploy@v4
