@@ -1,4 +1,4 @@
-import { contact, landingNavigation } from "@/lib/nav";
+import { contact, landingNavigation } from "../../lib/nav";
 import Link from "next/link";
 
 function Footer() {
