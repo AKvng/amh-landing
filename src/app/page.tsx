@@ -1,5 +1,5 @@
 import ImageCard from "@/components/card/ImageCard";
-import { IconDefinition, IconName } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {} from "@fortawesome/free-solid-svg-icons/faDollarSign";
 import {
   faDollarSign,
@@ -11,18 +11,17 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "@/components/layout/footer";
 
 function LandingPage() {
-  const landingNavigation = [
-    { name: "features", href: "#features" },
-    { name: "pricing", href: "#pricing" },
-    { name: "about us", href: "#about" },
-    { name: "dashboard", href: "#dashboard" },
-    { name: "contact", href: "#contact" },
-  ];
+  //   const landingNavigation = [
+  //     { name: "features", href: "#features" },
+  //     { name: "pricing", href: "#pricing" },
+  //     { name: "about us", href: "#about" },
+  //     { name: "dashboard", href: "#dashboard" },
+  //     { name: "contact", href: "#contact" },
+  //   ];
 
   const features: {
     name: string;
@@ -104,22 +103,22 @@ function LandingPage() {
       alt: "",
     },
   ];
-  const Nav = () => {
-    return (
-      <nav>
-        <ul>
-          {landingNavigation.map(({ name, href }) => (
-            <li key={name}>
-              <Link className="capitalize" href={href}>
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  };
-  const date = new Date();
+  //   const Nav = () => {
+  //     return (
+  //       <nav>
+  //         <ul>
+  //           {landingNavigation.map(({ name, href }) => (
+  //             <li key={name}>
+  //               <Link className="capitalize" href={href}>
+  //                 {name}
+  //               </Link>
+  //             </li>
+  //           ))}
+  //         </ul>
+  //       </nav>
+  //     );
+  //   };
+  //   const date = new Date();
 
   const Card = ({
     title,
