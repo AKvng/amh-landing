@@ -37,7 +37,7 @@ jobs:
         with:
           folder: out
           bucket: ${{ secrets.AMH_LANDING_S3_BUCKET }}
-          bucket-region: ${{ secrets.AMH_LANDING_S3_BUCKET_REGION }}
+          bucket-region: "${{ secrets.AMH_LANDING_S3_BUCKET_REGION }}"
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           no-cache: true
           delete-removed: true
