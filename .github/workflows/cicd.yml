@@ -25,9 +25,6 @@ jobs:
       - name: Build app to be ready for production
         run: npm run build
 
-      - name: Export static site
-        run: npx next export
-
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v2
         with:
