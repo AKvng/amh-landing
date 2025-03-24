@@ -25,6 +25,9 @@ jobs:
       - name: Build app to be ready for production
         run: npm run build
 
+      - name: Export static site
+        run: npx next export
+
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -36,8 +39,11 @@ jobs:
         uses: reggionick/s3-deploy@v4
         with:
           folder: build
+          cwd: ./out
           bucket: ${{ secrets.AMH_LANDING_S3_BUCKET }}
           bucket-region: ${{ secrets.AMH_LANDING_S3_BUCKET_REGION }}
+          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           no-cache: true
+          delete-removed: true
           private: true
           files-to-include: "{.*/**,**}"
