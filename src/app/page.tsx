@@ -127,7 +127,7 @@ function LandingPage() {
       </nav>
     );
   };
-  const date = new Date();
+  //   const date = new Date();
 
   const Card = ({
     title,
