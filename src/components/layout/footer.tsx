@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="bg-accent container1 py-4 md:py-6 lg:py-8">
+    <footer id="contact" className="bg-accent container1 py-4 md:py-6 lg:py-8">
       <div className="md:flex justify-around gap-x-7">
         {/* Company name and goal */}
         <div className="md:max-w-[15rem]">
