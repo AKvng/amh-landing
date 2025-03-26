@@ -8,7 +8,11 @@ export const landingNavigation = [
 ];
 
 export const contact = [
-  { name: "phone", content: "123456789" },
-  { name: "email", content: "amhecomglobal@gmail.com" },
-  { name: "address", content: "Lagos" },
+  { name: "phone:", content: "123456789" },
+  {
+    name: "email:",
+    href: "mailto:amhecomglobal@gmail.com",
+    content: "amhecomglobal@gmail.com",
+  },
+  { name: "Location:", content: "Lagos" },
 ];

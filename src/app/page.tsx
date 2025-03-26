@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import ImageCard from "../components/card/ImageCard";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -13,18 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Footer from "../components/layout/footer";
-import Link from "next/link";
+import Footer from "../components/layout/Footer";
+import Header from "@/components/layout/Header";
 
 function LandingPage() {
-  const [stickyOpaque, setStickyOpaque] = useState<boolean>(false);
-  const landingNavigation = [
-    { name: "features", href: "#features" },
-    { name: "services", href: "#services" },
-    { name: "pricing", href: "#pricing" },
-    { name: "contact", href: "#contact" },
-  ];
-
   const features: {
     name: string;
     description: string;
@@ -105,28 +96,7 @@ function LandingPage() {
       alt: "",
     },
   ];
-  const Nav = () => {
-    const navClassName = `px-3 md:px-16 lg:px-32 sticky flex justify-between items-center  pt-6 pb-4 top-0 z-10 ${
-      stickyOpaque ? "opacity-70" : ""
-    } ${stickyOpaque && "bg-primary-tint"}`;
-    return (
-      <nav className={navClassName}>
-        <div></div>
-        <ul className=" flex gap-x-3 px- justify-center">
-          {landingNavigation.map(({ name, href }) => (
-            <li key={name} className="font-semibold">
-              <Link className="capitalize hover:text-primary" href={href}>
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <button className="py-2 px-3 bg-high-emphasis text-bright rounded-lg self-end">
-          Sign In
-        </button>
-      </nav>
-    );
-  };
+
   //   const date = new Date();
 
   const Card = ({
@@ -147,23 +117,18 @@ function LandingPage() {
           alt={alt || "blue-background"}
         />
         <div className="px-7 text-left py-8 sm:py-2 md:py-5 sm:px-2 md:px-3 lg:px-5">
-          <h4 className="capitalize">{title}</h4>
+          <h4 className="capitalize dark:text-primary">{title}</h4>
           <p className="mt-1 text-lg text-light">{description}</p>
         </div>
       </>
     );
   };
 
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      setStickyOpaque(window.pageYOffset > 100);
-    });
-  }, [setStickyOpaque]);
   //   mt-5 container py-5 md:py-7 bg-blue-200 min-h-screen text-center lg:text-left lg:flex justify-center items-center gap-x-5
   return (
     <>
-      <Nav />
-      <div className="relative">
+      <Header />
+      <div className="relative mt-[-30px] md:mt-0">
         <Image
           className="-z-10 object-cover "
           src="/blue-background.jpg"
@@ -172,7 +137,7 @@ function LandingPage() {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {/* Header */}
-        <section className="container1 py-8 min-h-screen text-center sm:text-left sm:flex justify-center items-center gap-x-5">
+        <section className="container1 pt-11 pb-8 md:py-8 min-h-screen text-center sm:text-left sm:flex justify-center items-center gap-x-5">
           {/* Section Content */}
           <div className="space-y-7 md:space-y-20">
             {/* Headers */}
@@ -195,7 +160,7 @@ function LandingPage() {
               designed for effortless monitoring. Watch as your product listings
               come to life on your sales platform, connecting you to eager
               buyers and expanding your reach. With plans starting at just
-              $150/month, elevate your business efficiency and watch your sales
+              $10/month, elevate your business efficiency and watch your sales
               soar.
             </p>
 
@@ -218,7 +183,7 @@ function LandingPage() {
 
         <p className="mt-6 sm:mt-7 md:mt-6 font-light">
           Transform your ecommerce journey with our exeptional features for just
-          $150/month
+          $10/month
         </p>
 
         {/* Features Section*/}
@@ -270,7 +235,7 @@ function LandingPage() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-[url(/blue-background.jpg)] container1 overflow-hidden flex flex-col justify-center text-center min-h-screen px-3 py-24 lg:py-20">
+      <section className="bg-[url(/blue-background.jpg)] container1 overflow-hidden flex flex-col justify-center text-center min-h-screen px-3 py-24 lg:py-20 dark:text-high-emphasis">
         <h6 className="capitalize">our services</h6>
         <h2 id="services" className="mt-3 md:mt-6 capitalize px-4">
           Maximize your ecommerce efficiency
@@ -282,10 +247,10 @@ function LandingPage() {
         </p>
 
         {/* card */}
-        <div className="mt-8 md:mt-10 space-y-12 sm:space-y-0 md:flex md:flex-wrap md:justify-around gap-y-3 md:gap-y-5 md:gap-x-5 lg:gap-x-6 xl:gap-x-8">
+        <div className="mt-8 md:mt-10 space-y-12 sm:space-y-0 sm:flex sm:flex-wrap sm:justify-around gap-y-3 sm:gap-y-2 md:gap-x-5 lg:gap-x-6 xl:gap-x-8">
           {services.map(({ name, description, src, alt }) => (
             <div
-              className="md:flex-1 md:min-w-[18rem] md:max-w-[20rem] bg-bright over shadow-md rounded-2xl md:rounded-3xl overflow-hidden"
+              className="md:flex-1 sm:min-w-[12rem] sm:max-w-[16rem] md:min-w-[18rem] md:max-w-[20rem] bg-bright over shadow-md rounded-2xl md:rounded-3xl overflow-hidden"
               key={name}
             >
               <Card

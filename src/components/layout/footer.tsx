@@ -3,7 +3,10 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer id="contact" className="bg-accent container1 py-4 md:py-6 lg:py-8">
+    <footer
+      id="contact"
+      className="bg-accent container1 py-4 md:py-6 lg:py-8 dark:bg-grey dark:text-dark"
+    >
       <div className="md:flex justify-around gap-x-7">
         {/* Company name and goal */}
         <div className="md:max-w-[15rem]">
@@ -28,10 +31,10 @@ function Footer() {
         <div>
           <h4 className="mb-4 md:mb-8">Reach Out</h4>
           <div className="flex flex-col gap-y-1 md:gap-y-2">
-            {contact.map(({ name, content }) => (
+            {contact.map(({ name, content, href }) => (
               <div key={name} className="flex gap-x-2 gap-y-4">
                 <p>{name}</p>
-                <p>{content}</p>
+                {href ? <Link href={href}>{content}</Link> : <p>{content}</p>}
               </div>
             ))}
           </div>
