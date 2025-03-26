@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "../components/layout/Footer";
+
 import Header from "@/components/layout/Header";
 
 function LandingPage() {
