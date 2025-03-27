@@ -138,7 +138,7 @@ function LandingPage() {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {/* Header */}
-        <section className="container1 pt-11 pb-8 md:py-8 min-h-screen text-center sm:text-left sm:flex justify-center items-center gap-x-5">
+        <section className="container1 pt-11 pb-8 md:py-8 min-h-screen text-center sm:text-left flex justify-center items-center gap-x-5">
           {/* Section Content */}
           <div className="space-y-7 md:space-y-20">
             {/* Headers */}
@@ -154,7 +154,7 @@ function LandingPage() {
               </h2>
             </div>
 
-            <p className="text-dgrey md:text-lg">
+            <p className="text-high-emphasis md:text-lg">
               Take control of your ecommerce success with Amahoro. Our
               comprehensive service empowers sellers with seamless inventory
               management, real-time order tracking, and an intuitive dashboard
