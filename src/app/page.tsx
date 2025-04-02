@@ -80,21 +80,21 @@ function LandingPage() {
       description:
         "Gain full control over stock levels and fulfill orders promptly.",
       src: "/services/inventory-management.jpeg",
-      alt: "",
+      alt: "inventory picure",
     },
     {
       name: "Empower your selling journey",
       description:
         "Transform your products into sales as they integrate directly into your sales channels.",
       src: "/services/empowering-sales.jpeg",
-      alt: "",
+      alt: "handshake",
     },
     {
       name: "real-time analytics",
       description:
         "Refine your strategies and drive your business growth like never before.",
-      src: "/services/analytics.jpeg",
-      alt: "",
+      src: "/services/analytics.png",
+      alt: "analytics",
     },
   ];
 
