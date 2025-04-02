@@ -1,9 +1,8 @@
 // navigation content
 export const landingNavigation = [
   { name: "features", href: "#features" },
+  { name: "services", href: "#services" },
   { name: "pricing", href: "#pricing" },
-  { name: "about us", href: "#about" },
-  { name: "dashboard", href: "#dashboard" },
   { name: "contact", href: "#contact" },
 ];
 

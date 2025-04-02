@@ -1,6 +1,7 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -20,7 +21,18 @@ function Header() {
     } ${stickyOpaque && "bg-primary-tint"}`;
     return (
       <nav className={navClassName}>
-        <div></div>
+        <Link
+          className="relative w-8 md:w-12 aspect-[0.968] md:aspect-[1] rounded-lg"
+          title="homepage"
+          href="/"
+        >
+          <Image
+            className="object-cover object-center"
+            src="/LOGO-COLORED.png"
+            alt="AHH logo"
+            fill
+          />
+        </Link>
         <ul className=" flex gap-x-3 px- justify-center">
           {landingNavigation.map(({ name, href }) => (
             <li key={name} className="font-semibold">
@@ -43,21 +55,35 @@ function Header() {
     });
   }, [setStickyOpaque]);
 
-  const menuButtonClassName = `md:hidden  inline-flex items-center gap-2 rounded-md bg-gray-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-primary data-[focus]:outline-1 data-[focus]:outline-white ${
+  const menuButtonClassName = `md:hidden absolute inline-flex left-3 items-center gap-2 rounded-md bg-gray-800 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-primary data-[focus]:outline-1 data-[focus]:outline-white ${
     stickyOpaque ? "opacity-70" : ""
   } ${stickyOpaque && "bg-primary-tint"}`;
   return (
     <Menu>
       <div className={"md:hidden z-20 sticky top-3 left-2"}>
-        <div className="px-3 flex justify-between">
+        <div className="relative px-3 flex items-center justify-center">
           <MenuButton className={menuButtonClassName}>
             <FontAwesomeIcon icon={faBars} />
           </MenuButton>
 
+          <Link
+            className="relative w-8 md:w-12 aspect-[0.968] md:aspect-[1] rounded-lg"
+            title="homepage"
+            href="/"
+          >
+            <Image
+              className="object-cover object-center"
+              src="/LOGO-COLORED.png"
+              alt="AHH logo"
+              fill
+            />
+          </Link>
+
           <button
-            className={`md:hidden slef-end py-[3px] px-3 bg-high-emphasis text-bright rounded-lg ${
+            className={`md:hidden absolute py-[3px] px-3 right-3 bg-high-emphasis text-bright rounded-lg ${
               stickyOpaque ? "opacity-70" : ""
             } ${stickyOpaque && "bg-primary-tint"}`}
+            title="sign in"
           >
             Sign In
           </button>
