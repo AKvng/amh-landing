@@ -172,7 +172,7 @@ function LandingPage() {
           </div>
 
           {/* Section Image */}
-          <div className="hidden lg:block w-[2000px] bg-black h-80 rounded-lg"></div>
+          <div className="hidden lg:block w-[2000px] bg-[url(/growth.jpg)] bg-center bg-cover justify-center aspect-square rounded-lg"></div>
         </section>
       </div>
 
@@ -189,7 +189,7 @@ function LandingPage() {
 
         {/* Features Section*/}
         <div className="mt-7 md:mt-8 lg:flex gap-x-3">
-          <div className="rounded-xl hidden lg:block bg-dark w-[30rem]"></div>
+          <div className="rounded-xl hidden lg:block bg-[url(/long-cart.jpg)] bg-center bg-cover w-[30rem]"></div>
           {/* Features */}
           <div className="flex gap-y-12 md:gap-y-16 sm:gap-4 md:gap-x-6 lg:gap-x-7 xl:gap-x-16 justify-around w-full flex-wrap">
             {features.map(
@@ -295,7 +295,7 @@ function LandingPage() {
             </div>
             <div className="flex gap-x-4 ms-4">
               <FontAwesomeIcon className="text-green-500" icon={faCheck} />
-              <p className="mt-3 lg:mt-8">
+              <p>
                 Advanced Analytics Tools - Gain valuable insights to fine-tune
                 your sales strategies and drive measurable growth.
               </p>
@@ -310,7 +310,7 @@ function LandingPage() {
             transform your ecommerce operations today
           </button>
         </div>
-        <div className="hidden lg:block bg-dark w-[50rem] h-[20rem] rounded-lg"></div>
+        <div className="hidden lg:block bg-[url(/happy-owner2.jpg)] bg-center bg-cover w-[50rem] h-[20rem] rounded-lg"></div>
       </section>
 
       <Footer />
